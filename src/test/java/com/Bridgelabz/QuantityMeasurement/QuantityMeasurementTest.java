@@ -42,7 +42,7 @@ public class QuantityMeasurementTest {
 
     @Test
     public void givenNullAndOneValueInInch_shouldReturnFalse(){
-        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.FEET,0.0);
+        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,0.0);
         valueInInches.equals(null);
         Assert.assertFalse(false);
     }
@@ -53,5 +53,12 @@ public class QuantityMeasurementTest {
         Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,0.0);
         boolean check = valueInFeet.checkCompare(valueInInches);
         Assert.assertTrue(check);
+    }
+
+    @Test
+    public void given1InchAnd1Feet_whenCompare_shouldReturnFalse(){
+        Length valueInFeet = new Length(AllUnitsToUse.UnitConverter.FEET,1.0);
+        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,1.0);
+        Assert.assertNotEquals(valueInInches,valueInFeet);
     }
 }

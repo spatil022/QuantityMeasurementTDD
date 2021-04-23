@@ -19,7 +19,6 @@ public class QuantityMeasurementTest {
         Assert.assertNotEquals(lengthValue1, lengthValue2);
     }
 
-
     @Test
     public void givenNullAndOneValueInFeet_shouldReturnFalse() {
         Length lengthValue1 = new Length(AllUnitsToUse.UnitConverter.FEET, 0.0);
@@ -32,5 +31,12 @@ public class QuantityMeasurementTest {
         Length valueInInches1 = new Length(AllUnitsToUse.UnitConverter.INCHES,0.0);
         Length valueInInches2 = new Length(AllUnitsToUse.UnitConverter.INCHES,0.0);
         Assert.assertEquals(valueInInches1,valueInInches2);
+    }
+
+    @Test
+    public void given0InchAnd1Inch_whenCompare_shouldReturnFalse(){
+        Length valueInInches1 = new Length(AllUnitsToUse.UnitConverter.INCHES,0.0);
+        Length valueInInches2 = new Length(AllUnitsToUse.UnitConverter.INCHES,1.0);
+        Assert.assertNotEquals(valueInInches1,valueInInches2);
     }
 }

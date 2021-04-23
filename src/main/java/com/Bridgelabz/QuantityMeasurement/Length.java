@@ -2,10 +2,12 @@ package com.Bridgelabz.QuantityMeasurement;
 
 public class Length {
     private final double valueOfFeet;
+    private final AllUnitsToUse.UnitConverter unit;
     
 
     public Length(AllUnitsToUse.UnitConverter unit, double valueOfFeet) {
         this.valueOfFeet = valueOfFeet;
+        this.unit = unit;
     }
 
     @Override

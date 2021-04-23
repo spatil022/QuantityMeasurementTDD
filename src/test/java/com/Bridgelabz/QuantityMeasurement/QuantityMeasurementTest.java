@@ -56,6 +56,14 @@ public class QuantityMeasurementTest {
     }
 
     @Test
+    public void given0InchesAnd0Feet_whenCompare_shouldReturnTrue(){
+        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,0.0);
+        Length valueInFeet = new Length(AllUnitsToUse.UnitConverter.FEET,0.0);
+        boolean check = valueInInches.checkCompare(valueInFeet);
+        Assert.assertTrue(check);
+    }
+
+    @Test
     public void given1InchAnd1Feet_whenCompare_shouldReturnFalse(){
         Length valueInFeet = new Length(AllUnitsToUse.UnitConverter.FEET,1.0);
         Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,1.0);

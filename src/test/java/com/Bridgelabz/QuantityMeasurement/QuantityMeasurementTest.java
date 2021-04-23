@@ -11,4 +11,11 @@ public class QuantityMeasurementTest {
         Feet feetValue2 = new Feet(0.0);
         Assert.assertEquals(feetValue1,feetValue2);
     }
+
+    @Test
+    public void givenNullValueZeroAndOneFeet_shouldReturnFalse(){
+        Feet feetValue1 = new Feet(0.0);
+        Feet feetValue2 = new Feet(1.0);
+        Assert.assertNotEquals(feetValue1,feetValue2);
+    }
 }

@@ -39,11 +39,19 @@ public class QuantityMeasurementTest {
         Length valueInInches2 = new Length(AllUnitsToUse.UnitConverter.INCHES,1.0);
         Assert.assertNotEquals(valueInInches1,valueInInches2);
     }
-    
+
     @Test
     public void givenNullAndOneValueInInch_shouldReturnFalse(){
-        Length valueInInche = new Length(AllUnitsToUse.UnitConverter.FEET,0.0);
-        valueInInche.equals(null);
+        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.FEET,0.0);
+        valueInInches.equals(null);
         Assert.assertFalse(false);
+    }
+
+    @Test
+    public void given0FeetAnd0Inches_whenCompare_shouldReturnTrue(){
+        Length valueInFeet = new Length(AllUnitsToUse.UnitConverter.FEET,0.0);
+        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,0.0);
+        boolean check = valueInFeet.checkCompare(valueInInches);
+        Assert.assertTrue(check);
     }
 }

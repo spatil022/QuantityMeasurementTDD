@@ -1,11 +1,10 @@
 package com.Bridgelabz.QuantityMeasurement;
 
-import java.util.Objects;
-
-public class Feet {
+public class Length {
     private final double valueOfFeet;
+    
 
-    public Feet(double valueOfFeet) {
+    public Length(AllUnitsToUse.UnitConverter unit, double valueOfFeet) {
         this.valueOfFeet = valueOfFeet;
     }
 
@@ -13,7 +12,7 @@ public class Feet {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Feet feet = (Feet) o;
-        return Double.compare(feet.valueOfFeet, valueOfFeet) == 0;
+        Length length = (Length) o;
+        return Double.compare(length.valueOfFeet, valueOfFeet) == 0;
     }
 }

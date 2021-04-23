@@ -61,4 +61,12 @@ public class QuantityMeasurementTest {
         Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,1.0);
         Assert.assertNotEquals(valueInInches,valueInFeet);
     }
+
+    @Test
+    public void given1FeetAnd12Inches_whenCompare_shouldEqualsTrue(){
+        Length valueInFeet = new Length(AllUnitsToUse.UnitConverter.FEET,1.0);
+        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,12.0);
+        boolean check = valueInFeet.checkCompare(valueInInches);
+        Assert.assertTrue(check);
+    }
 }

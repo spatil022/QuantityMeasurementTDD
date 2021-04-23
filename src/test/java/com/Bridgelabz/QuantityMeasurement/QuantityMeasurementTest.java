@@ -39,4 +39,11 @@ public class QuantityMeasurementTest {
         Length valueInInches2 = new Length(AllUnitsToUse.UnitConverter.INCHES,1.0);
         Assert.assertNotEquals(valueInInches1,valueInInches2);
     }
+    
+    @Test
+    public void givenNullAndOneValueInInch_shouldReturnFalse(){
+        Length valueInInche = new Length(AllUnitsToUse.UnitConverter.FEET,0.0);
+        valueInInche.equals(null);
+        Assert.assertFalse(false);
+    }
 }

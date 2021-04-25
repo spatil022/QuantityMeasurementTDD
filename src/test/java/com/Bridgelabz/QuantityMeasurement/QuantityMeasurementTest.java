@@ -161,4 +161,11 @@ public class QuantityMeasurementTest {
         boolean compareCheck = valueInYards.checkCompare(valuesInFeet);
         Assert.assertTrue(compareCheck);
     }
+
+    @Test
+    public void givenValuesAsZeroCmAndZeroCm_shouldReturnTrue(){
+        Length valueInCm1 = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,0);
+        Length valueInCm2 = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,0);
+        Assert.assertEquals(valueInCm1,valueInCm2);
+    }
 }

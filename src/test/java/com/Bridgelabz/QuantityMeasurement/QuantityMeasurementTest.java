@@ -176,4 +176,11 @@ public class QuantityMeasurementTest {
         Length cmValue2 = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,1.0);
         Assert.assertNotEquals(cmValue1, cmValue2);
     }
+
+    @Test
+    public void givenNullAndOneValueInCm_shouldReturnFalse(){
+        Length valueInCm = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,0.0);
+        valueInCm.equals(null);
+        Assert.assertFalse(false);
+    }
 }

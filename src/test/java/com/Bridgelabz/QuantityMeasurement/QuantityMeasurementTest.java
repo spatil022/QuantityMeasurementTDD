@@ -357,4 +357,12 @@ public class QuantityMeasurementTest {
         boolean check = valueInLiter.checkCompare(valueInMl);
         Assert.assertTrue(check);
     }
+
+    @Test
+    public void givenZeroGallonAndZeroLiter_whenAdded_shouldRetuenZero(){
+        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,0.0);
+        QuantityMeasurement valueInGallon = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,0.0);
+        double check = valueInGallon.addition(valueInLiter);
+        Assert.assertEquals(0,check,0);
+    }
 }

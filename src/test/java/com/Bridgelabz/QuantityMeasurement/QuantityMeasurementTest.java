@@ -217,9 +217,18 @@ public class QuantityMeasurementTest {
 
     @Test
     public void given2InchesAnd2Inches_whenAdded_shouldReturn4(){
-        Length valueInFInch1 = new Length(AllUnitsToUse.UnitConverter.INCHES,2.0);
+        Length valueInInch1 = new Length(AllUnitsToUse.UnitConverter.INCHES,2.0);
         Length valueInInch2= new Length(AllUnitsToUse.UnitConverter.INCHES,2.0);
-        double check = valueInFInch1.addition(valueInInch2);
+        double check = valueInInch1.addition(valueInInch2);
         Assert.assertEquals(4,check,0);
+    }
+
+    @Test
+    public void givenOneFeetAndTwoInch_whenAdded_shouldReturn14Inches(){
+        Length valueInFeet = new Length(AllUnitsToUse.UnitConverter.FEET,1.00);
+        Length valueInInch = new Length(AllUnitsToUse.UnitConverter.INCHES,2.00);
+        double check = valueInFeet.addition(valueInInch);
+        Assert.assertEquals(14,check,0);
+
     }
 }

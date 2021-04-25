@@ -163,43 +163,6 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenValuesAsZeroCmAndZeroCm_shouldReturnTrue(){
-        Length valueInCm1 = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,0);
-        Length valueInCm2 = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,0);
-        Assert.assertEquals(valueInCm1,valueInCm2);
-    }
-
-    @Test
-    public void givenValuesAsZeroAndOneCm_whenCompare_shouldReturnFalse()
-    {
-        Length cmValue1 = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,0.0);
-        Length cmValue2 = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,1.0);
-        Assert.assertNotEquals(cmValue1, cmValue2);
-    }
-
-    @Test
-    public void givenNullAndOneValueInCm_shouldReturnFalse(){
-        Length valueInCm = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,0.0);
-        valueInCm.equals(null);
-        Assert.assertFalse(false);
-    }
-
-    @Test
-    public void given0InchesAnd0Cm_whenCompare_shouldReturnTrue(){
-        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,0.0);
-        Length valueInCm = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,0.0);
-        boolean check = valueInInches.checkCompare(valueInCm);
-        Assert.assertTrue(check);
-    }
-
-    @Test
-    public void given1CmAnd1Inches_whenCompare_shouldReturnFalse(){
-        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,1.0);
-        Length valueInCm = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,1.0);
-        Assert.assertNotEquals(valueInCm,valueInInches);
-    }
-
-    @Test
     public void given2InchesAnd5Cm_whenCompare_shouldEqualsTrue(){
         Length valueInFInches = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,5.0);
         Length valueInCm = new Length(AllUnitsToUse.UnitConverter.INCHES,2.0);

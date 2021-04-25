@@ -113,4 +113,12 @@ public class QuantityMeasurementTest {
         value1InYards.equals(null);
         Assert.assertFalse(false);
     }
+
+    @Test
+    public void givenValuesAsThreeFeetAndOneYard_whenCompare_ShouldReturnTrue() {
+        Length valuesInFeet = new Length(AllUnitsToUse.UnitConverter.FEET,3.0);
+        Length valueInYards = new Length(AllUnitsToUse.UnitConverter.YARDS,1.0);
+        boolean compareCheck = valuesInFeet.checkCompare(valueInYards);
+        Assert.assertTrue(compareCheck);
+    }
 }

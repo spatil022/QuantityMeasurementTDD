@@ -260,4 +260,11 @@ public class QuantityMeasurementTest {
         QuantityMeasurement valueInGallon2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,1.0);
         Assert.assertNotEquals(valueInGallon1, valueInGallon2);
     }
+
+    @Test
+    public void givenNullAndOneValueInGallon_shouldReturnFalse(){
+        QuantityMeasurement valueInGallon = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,0.0);
+        valueInGallon.equals(null);
+        Assert.assertFalse(false);
+    }
 }

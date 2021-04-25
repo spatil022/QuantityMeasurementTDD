@@ -282,4 +282,11 @@ public class QuantityMeasurementTest {
         Assert.assertNotEquals(valueInLiter1, valueInLiter2);
     }
 
+    @Test
+    public void givenNullAndOneValueInLiter_shouldReturnFalse(){
+        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,0.0);
+        valueInLiter.equals(null);
+        Assert.assertFalse(false);
+    }
+
 }

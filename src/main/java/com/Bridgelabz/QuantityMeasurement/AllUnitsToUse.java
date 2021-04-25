@@ -11,7 +11,9 @@ public class AllUnitsToUse {
             public double convertToInches(double length) {
                 return length;
             }
-        };
+        },
+        YARDS;
+
         public double convertToInches(double length) {
             return 0.0;
         }

@@ -334,4 +334,19 @@ public class QuantityMeasurementTest {
         Assert.assertFalse(false);
     }
 
+    @Test
+    public void given0MililiterAnd0Liter_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,0.0);
+        QuantityMeasurement valueInMl = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,0.0);
+        boolean check = valueInLiter.checkCompare(valueInMl);
+        Assert.assertTrue(check);
+    }
+
+    @Test
+    public void given1MililiterAnd1Liter_whenCompare_shouldReturnFalse(){
+        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,1.0);
+        QuantityMeasurement valueInMl = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,1.0);
+        boolean check = valueInLiter.checkCompare(valueInMl);
+        Assert.assertFalse(check);
+    }
 }

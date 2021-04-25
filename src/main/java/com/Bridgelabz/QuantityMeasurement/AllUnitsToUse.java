@@ -23,10 +23,18 @@ public class AllUnitsToUse {
             }
 
         },
-        GALLON,
-        LITER;
+        GALLON {
+            public double convertToInches(double volume) {
+                return volume * 3.785;
+            }
+        },
+        LITER {
+            public double convertToInches(double volume) {
+                return volume;
+            }
+        };
 
-        public double convertToInches(double length) {
+        public double convertToInches(double quantity) {
             return 0.0;
         }
     }

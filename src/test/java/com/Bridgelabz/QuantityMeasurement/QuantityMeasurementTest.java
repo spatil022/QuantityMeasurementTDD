@@ -289,4 +289,27 @@ public class QuantityMeasurementTest {
         Assert.assertFalse(false);
     }
 
+    @Test
+    public void given0GallonAnd0Liter_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,0.0);
+        QuantityMeasurement valueInGallon = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,0.0);
+        boolean check = valueInLiter.checkCompare(valueInGallon);
+        Assert.assertTrue(check);
+    }
+
+    @Test
+    public void given1GallonAnd1Liter_whenCompare_shouldReturnFalse(){
+        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,1.0);
+        QuantityMeasurement valueInGallon = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,1.0);
+        boolean check = valueInLiter.checkCompare(valueInGallon);
+        Assert.assertFalse(check);
+    }
+
+    @Test
+    public void given1GallonAnd3point78Liter_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,3.785);
+        QuantityMeasurement valueInGallon = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,1.0);
+        boolean check = valueInLiter.checkCompare(valueInGallon);
+        Assert.assertTrue(check);
+    }
 }

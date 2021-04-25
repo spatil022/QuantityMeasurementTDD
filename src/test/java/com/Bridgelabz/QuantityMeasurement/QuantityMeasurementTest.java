@@ -373,4 +373,12 @@ public class QuantityMeasurementTest {
         double check = valueInGallon1.addition(valueInGallon2);
         Assert.assertEquals(7.57,check,0);
     }
+
+    @Test
+    public void givenOneLiterAnd1000Ml_whenAdded_shouldReturn2Liters(){
+        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,1.0);
+        QuantityMeasurement valueInMl = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,1000.0);
+        double check = valueInLiter.addition(valueInMl);
+        Assert.assertEquals(2,check,0);
+    }
 }

@@ -183,4 +183,19 @@ public class QuantityMeasurementTest {
         valueInCm.equals(null);
         Assert.assertFalse(false);
     }
+
+    @Test
+    public void given0InchesAnd0Cm_whenCompare_shouldReturnTrue(){
+        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,0.0);
+        Length valueInCm = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,0.0);
+        boolean check = valueInInches.checkCompare(valueInCm);
+        Assert.assertTrue(check);
+    }
+
+    @Test
+    public void given1CmAnd1Inches_whenCompare_shouldReturnFalse(){
+        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,1.0);
+        Length valueInCm = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,1.0);
+        Assert.assertNotEquals(valueInCm,valueInInches);
+    }
 }

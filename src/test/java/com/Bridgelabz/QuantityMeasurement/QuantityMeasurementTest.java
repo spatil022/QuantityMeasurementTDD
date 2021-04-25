@@ -349,4 +349,12 @@ public class QuantityMeasurementTest {
         boolean check = valueInLiter.checkCompare(valueInMl);
         Assert.assertFalse(check);
     }
+
+    @Test
+    public void given1000MililiterAnd1Liter_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,1.0);
+        QuantityMeasurement valueInMl = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,1000.0);
+        boolean check = valueInLiter.checkCompare(valueInMl);
+        Assert.assertTrue(check);
+    }
 }

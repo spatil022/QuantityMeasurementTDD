@@ -6,8 +6,8 @@ public class Length {
     private final double value;
     private final AllUnitsToUse.UnitConverter unit;
 
-    public Length(AllUnitsToUse.UnitConverter unit, double valueOfFeet) {
-        this.value = valueOfFeet;
+    public Length(AllUnitsToUse.UnitConverter unit, double value) {
+        this.value = value;
         this.unit = unit;
     }
 
@@ -24,4 +24,12 @@ public class Length {
         double secondValue = that.unit.convertToInches(that.value);
         return Objects.equals(firstValue, secondValue);
     }
+
+    public double addition(Length that) {
+        double firstValue = this.unit.convertToInches(this.value);
+        double secondValue = that.unit.convertToInches(that.value);
+        return firstValue+secondValue;
+
+    }
+
 }

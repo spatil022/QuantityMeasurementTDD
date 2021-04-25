@@ -23,7 +23,8 @@ public class AllUnitsToUse {
             }
 
         },
-        GALLON;
+        GALLON,
+        LITER;
 
         public double convertToInches(double length) {
             return 0.0;

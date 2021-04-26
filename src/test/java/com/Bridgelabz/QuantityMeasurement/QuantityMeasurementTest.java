@@ -495,4 +495,11 @@ public class QuantityMeasurementTest {
         quantityMeasurementValue1.equals(null);
         Assert.assertFalse(false);
     }
+
+    @Test
+    public void given0FahrenheitAnd0Fahrenheit_whenCompare_shouldReturnEqual(){
+        QuantityMeasurement valueInFahrenheit1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,0.0);
+        QuantityMeasurement valueInFahrenheit2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,0.0);
+        Assert.assertEquals(valueInFahrenheit1, valueInFahrenheit2);
+    }
 }

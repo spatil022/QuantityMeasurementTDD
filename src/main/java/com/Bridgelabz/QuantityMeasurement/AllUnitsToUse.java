@@ -57,7 +57,8 @@ public class AllUnitsToUse {
             {
                 return temperature;
             }
-        };
+        } ,
+    FAHRENHEIT;
 
         public double conversion(double quantity) {
             return 0.0;

@@ -518,10 +518,18 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenValue0DegreeAnd0Fahrenheit_whenCompare_shouldReturnEqual(){
+    public void givenValue0DegreeAnd0Fahrenheit_whenCompare_shouldReturnTrue(){
         QuantityMeasurement valueInFahrenheit = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,0.0);
         QuantityMeasurement valueInDegree = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,0.0);
         boolean check = valueInDegree.checkCompare(valueInFahrenheit);
         Assert.assertTrue(check);
+    }
+
+    @Test
+    public void givenValue0DegreeAnd1Fahrenheit_whenCompare_shouldReturnFalse(){
+        QuantityMeasurement valueInFahrenheit = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,1.0);
+        QuantityMeasurement valueInDegree = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,0.0);
+        boolean check = valueInDegree.checkCompare(valueInFahrenheit);
+        Assert.assertFalse(check);
     }
 }

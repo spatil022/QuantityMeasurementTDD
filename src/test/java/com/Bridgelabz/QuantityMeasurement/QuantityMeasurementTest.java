@@ -423,4 +423,11 @@ public class QuantityMeasurementTest {
         quantityMeasurementValue1.equals(null);
         Assert.assertFalse(false);
     }
+
+    @Test
+    public void givenZeroKgAndZeroGram_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInKilogram1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,0);
+        QuantityMeasurement valueInGram2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,0);
+        Assert.assertNotEquals(valueInKilogram1,valueInGram2);
+    }
 }

@@ -516,4 +516,12 @@ public class QuantityMeasurementTest {
         quantityMeasurementValue1.equals(null);
         Assert.assertFalse(false);
     }
+
+    @Test
+    public void givenValue0DegreeAnd0Fahrenheit_whenCompare_shouldReturnEqual(){
+        QuantityMeasurement valueInFahrenheit = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,0.0);
+        QuantityMeasurement valueInDegree = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,0.0);
+        boolean check = valueInDegree.checkCompare(valueInFahrenheit);
+        Assert.assertTrue(check);
+    }
 }

@@ -532,4 +532,12 @@ public class QuantityMeasurementTest {
         boolean check = valueInDegree.checkCompare(valueInFahrenheit);
         Assert.assertFalse(check);
     }
+
+    @Test
+    public void givenValue100DegreeAnd212Fahrenheit_whenCompare_shouldReturnEqual(){
+        QuantityMeasurement valueInFahrenheit = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,212.0);
+        QuantityMeasurement valueInDegree = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,100.0);
+        boolean check = valueInDegree.compareTemperatures(valueInFahrenheit);
+        Assert.assertTrue(check);
+    }
 }

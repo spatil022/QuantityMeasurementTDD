@@ -459,4 +459,19 @@ public class QuantityMeasurementTest {
         QuantityMeasurement valueInTonne2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.TONNE,0);
         Assert.assertNotEquals(valueInTonne,valueInTonne2);
     }
+
+    @Test
+    public void givenNullAndOneValueInTonnes_shouldReturnFalse(){
+        QuantityMeasurement quantityMeasurementValue1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.TONNE,0.0);
+        quantityMeasurementValue1.equals(null);
+        Assert.assertFalse(false);
+    }
+
+    @Test
+    public void given1TonnesAnd1000Gms_whenAdded_shouldReturnAdditionInKg(){
+        QuantityMeasurement valueInTonne = new QuantityMeasurement(AllUnitsToUse.UnitConverter.TONNE,1.0);
+        QuantityMeasurement valueInGrams = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,1000.0);
+        double check = valueInTonne.addition(valueInGrams);
+        Assert.assertEquals(1001,check,0);
+    }
 }

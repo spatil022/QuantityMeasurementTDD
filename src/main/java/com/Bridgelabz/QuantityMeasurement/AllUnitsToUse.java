@@ -47,7 +47,7 @@ public class AllUnitsToUse {
             public double conversion(double weight) {
                 return weight/1000;
             }
-        };
+        },TONNE;
 
         public double conversion(double quantity) {
             return 0.0;

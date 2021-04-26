@@ -445,4 +445,11 @@ public class QuantityMeasurementTest {
         boolean check = valueInKilogram1.checkCompare(valueInGram2);
         Assert.assertTrue(check);
     }
+
+    @Test
+    public void givenZeroToneAndZeroTone_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInTonne = new QuantityMeasurement(AllUnitsToUse.UnitConverter.TONNE,0);
+        QuantityMeasurement valueInTonne2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.TONNE,0);
+        Assert.assertEquals(valueInTonne,valueInTonne2);
+    }
 }

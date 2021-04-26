@@ -14,8 +14,8 @@ public class AllUnitsToUse {
         },
         YARDS {
             public double conversion(double length) {
-                return length * 3 * 12;
-            }
+                return length * 3 * 12;}
+
         },
         CENTIMETER {
             public double conversion(double length) {
@@ -33,11 +33,12 @@ public class AllUnitsToUse {
                 return volume;
             }
         },
-        MILILITER{
+        MILILITER {
             public double conversion(double volume) {
                 return volume/1000;
             }
-        };
+        },
+        KILOGRAM;
 
         public double conversion(double quantity) {
             return 0.0;

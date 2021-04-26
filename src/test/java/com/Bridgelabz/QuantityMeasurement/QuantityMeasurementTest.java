@@ -381,4 +381,11 @@ public class QuantityMeasurementTest {
         double check = valueInLiter.addition(valueInMl);
         Assert.assertEquals(2,check,0);
     }
+
+    @Test
+    public void givenZeroKgAndZeroKg_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInKG1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,0);
+        QuantityMeasurement valueInKG2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,0);
+        Assert.assertEquals(valueInKG1,valueInKG2);
+    }
 }

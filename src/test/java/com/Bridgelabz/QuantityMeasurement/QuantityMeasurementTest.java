@@ -430,4 +430,11 @@ public class QuantityMeasurementTest {
         QuantityMeasurement valueInGram2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,0);
         Assert.assertNotEquals(valueInKilogram1,valueInGram2);
     }
+
+    @Test
+    public void givenOneKgAndOneGram_whenCompare_shouldReturnFalse(){
+        QuantityMeasurement valueInKilogram1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,1.0);
+        QuantityMeasurement valueInGram2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,1.0);
+        Assert.assertNotEquals(valueInKilogram1,valueInGram2);
+    }
 }

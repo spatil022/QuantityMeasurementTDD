@@ -481,4 +481,11 @@ public class QuantityMeasurementTest {
         QuantityMeasurement valueInDegree2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,0.0);
         Assert.assertEquals(valueInDegree1, valueInDegree2);
     }
+
+    @Test
+    public void given0DegreeAnd1Degree_whenCompare_shouldReturnFalse(){
+        QuantityMeasurement valueInDegree1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,0.0);
+        QuantityMeasurement valueInDegree2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,1.0);
+        Assert.assertNotEquals(valueInDegree1, valueInDegree2);
+    }
 }

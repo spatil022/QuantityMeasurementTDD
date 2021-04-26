@@ -474,4 +474,11 @@ public class QuantityMeasurementTest {
         double check = valueInTonne.addition(valueInGrams);
         Assert.assertEquals(1001,check,0);
     }
+
+    @Test
+    public void given0DegreeAnd0Degree_whenCompare_shouldReturnEqual(){
+        QuantityMeasurement valueInDegree1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,0.0);
+        QuantityMeasurement valueInDegree2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,0.0);
+        Assert.assertEquals(valueInDegree1, valueInDegree2);
+    }
 }

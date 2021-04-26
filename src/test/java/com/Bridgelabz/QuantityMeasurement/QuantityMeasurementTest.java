@@ -402,4 +402,11 @@ public class QuantityMeasurementTest {
         quantityMeasurementValue1.equals(null);
         Assert.assertFalse(false);
     }
+
+    @Test
+    public void givenZeroGramsAndZeroGrams_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInGram1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,0);
+        QuantityMeasurement valueInGram2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,0);
+        Assert.assertEquals(valueInGram1,valueInGram2);
+    }
 }
